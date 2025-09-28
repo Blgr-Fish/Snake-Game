@@ -7,7 +7,6 @@ A minimalist implementation of the classic Snake game in C++, using **SFML**.
 ## Features
 
 - Classic snake gameplay
-- 
 - Keyboard controls (ZQSD or Arrow keys)
 - Growing snake and food spawning
 - Game over on collision with walls or self

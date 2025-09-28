@@ -27,19 +27,23 @@ void Snake::setLastFrameDirection(int direction) { this->lastFrameDirection = di
 bool Snake::checkIsAlive(){ return this->isAlive ;} 
 
 void Snake::changeDirection() {
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Z) && this->lastFrameDirection !=3)
+    if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Z) ||
+         sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up)) && this->lastFrameDirection !=3)
         {
             this->direction = 1 ;
         }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Q)  && this->lastFrameDirection !=4)
+    else if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Q) ||
+              sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))  && this->lastFrameDirection !=4)
         {
             this->direction = 2 ;
         }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)  && this->lastFrameDirection !=1)
+    else if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S) ||
+              sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))  && this->lastFrameDirection !=1)
         {
             this->direction = 3 ;
         }
-    else  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)  && this->lastFrameDirection !=2)
+    else  if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D) ||
+               sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)) && this->lastFrameDirection !=2)
         {
             this->direction = 4 ;   
         }

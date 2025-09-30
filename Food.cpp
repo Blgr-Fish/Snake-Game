@@ -12,6 +12,12 @@ Food::Food() {
     this->isVisible = false ;
 }
 
+void Food::resetFood() {
+    this->p_x = 0;
+    this->p_y = 0;
+    this->isVisible = false ;
+}
+
 void Food::draw(sf::RenderWindow& window) {
     if (!isVisible) return;
     sf::RectangleShape shape(sf::Vector2f(SNAKE_PART_SIZE, SNAKE_PART_SIZE));

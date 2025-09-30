@@ -38,6 +38,8 @@ public:
     void setLastFrameDirection(int direction) ;
     int getDirection() ;
 
+    void resetSnake();
+
 
 private:
 

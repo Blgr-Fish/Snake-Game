@@ -16,6 +16,8 @@ class Food {
         int getY() const ;
 
         void setVisibility( bool v) ;
+
+        void resetFood();
     private:
         int p_x;
         int p_y;

@@ -20,6 +20,23 @@ Snake::Snake() {
 
 }
 
+void Snake::resetSnake() {
+    this->size = 1 ;
+
+    this->isAlive = true ;
+
+    this->snake.clear();
+    
+    this->snake.push_back(SnakePart((SCREEN_WIDTH/SNAKE_PART_SIZE)/2,(SCREEN_HEIGHT/SNAKE_PART_SIZE)/2));
+
+    this->direction = -1 ;
+
+    this->score = 0 ;
+
+    this->lastFrameDirection = -1 ;
+    
+}
+
 int Snake::getDirection() {return this->direction;}
 
 void Snake::setLastFrameDirection(int direction) { this->lastFrameDirection = direction ;}

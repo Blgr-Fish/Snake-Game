@@ -74,7 +74,7 @@ void Snake::move() {
 
     
 
-    SnakePart head = this->snake.front();
+    SnakePart & head = this->snake.front();
     std::cout << "X : " <<head.getX() << ", Y : " << head.getY() << std::endl;
 
     
@@ -113,7 +113,7 @@ void Snake::move() {
 }
 
 void Snake::checkColisions() {
-        SnakePart head = this->snake.front();
+        SnakePart & head = this->snake.front();
 
         // Out of bounds
         if (head.getX() < 0 || head.getX() >= SCREEN_WIDTH / SNAKE_PART_SIZE ||
@@ -123,7 +123,7 @@ void Snake::checkColisions() {
         
         }
 
-        for (SnakePart s : snake) {
+        for (SnakePart & s : snake) {
             if (!s.isHead() && head.getX() == s.getX() && head.getY() == s.getY()){
                 this->isAlive = false ;
             }
@@ -137,7 +137,7 @@ void Snake::setDirection(int direction) {
 }
 
 void Snake::draw(sf::RenderWindow& window) {
-    for (SnakePart part : snake) {
+    for (SnakePart & part : snake) {
 
         float x = part.getX() * SNAKE_PART_SIZE;
         float y = part.getY() * SNAKE_PART_SIZE;
@@ -154,7 +154,7 @@ std::deque<SnakePart> Snake::getSnake() const {return this->snake ;}
 void Snake::eat(Food& f) {
 
     
-    SnakePart head = this->snake.front();
+    SnakePart & head = this->snake.front();
 
     // eat the food
     if (head.getX() == f.getX() && head.getY() == f.getY() && f.canEat()) {

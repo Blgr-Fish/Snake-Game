@@ -1,7 +1,5 @@
 #include "Game.h"
 
-
-
 int main() {
     
     sf::RenderWindow window(sf::VideoMode({SCREEN_WIDTH, SCREEN_HEIGHT}), "p_snake Game");
@@ -10,10 +8,6 @@ int main() {
     Game g = Game(font, clock) ;
 
     g.GameLaunch(window);
-
-    
-
-   
 
     return 0;
 }

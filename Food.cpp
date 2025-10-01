@@ -55,7 +55,7 @@ void Food::createNewFood(const Snake &snake){
             y >= 0 && y < SCREEN_HEIGHT / SNAKE_PART_SIZE) {
         
             // Now check if is not in snake :
-            for (SnakePart s : snakeQueue) {
+            for (SnakePart & s : snakeQueue) {
                 if (x == s.getX() && y == s.getY()){
                     isInSnake = true ;
                     break;
